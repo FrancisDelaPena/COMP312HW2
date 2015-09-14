@@ -19,12 +19,6 @@ def crimeWards(): # get wards from crimes in the past year
             crimeWards.append(row[10]) #10th row has ward numbers
         return crimeWards
 
-class TestAnalysis(unittest.TestCase):
-    def testLLWards(self):
-        self.assertNotEqual(landlordWards, 'true')
-    def testCrimeWards(self):
-        self.assertNotEqual(crimeWards, 'true')
-
 def main():
     landlordWardCount = []
     crimeWardCount = []
@@ -33,9 +27,8 @@ def main():
     crimeWardCount.append(collections.Counter(crimeWards()))
 
 
-    print("The wards with notable problem landlords are: ", landlordWardCount) #prints out list of wards and number of instances
-    print("The wards with the most crime in the past year are: ", crimeWardCount) #prints out list of wards and number of instances
+    print("The wards with the most to least notable problem landlords are: ", landlordWardCount) #prints out list of wards and number of instances
+    print("The wards with the most to least crime in the past year are: ", crimeWardCount) #prints out list of wards and number of instances
 
 main()
-unittest.main()
 
